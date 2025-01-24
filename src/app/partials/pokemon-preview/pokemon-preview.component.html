@@ -1,0 +1,15 @@
+@defer (on timer(0)) {
+  @for (pokemon of pokemons; track pokemon.id) {
+  <div class="p-4">
+    <a [href]="link + '/' + pokemon.id">
+      <div class="h-full flex flex-col items-center text-center">
+        <img alt="team" class="flex-shrink-0 rounded-lg object-cover object-center mb-4" [src]="pokemon.sprite">
+        <div class="w-full">
+          <h2 class="title-font font-medium text-lg text-gray-900">{{pokemon.name}}</h2>
+          <h3 class="text-gray-500 mb-3">{{pokemon.pokedexId}}</h3>
+        </div>
+      </div>
+    </a>
+  </div>
+  }
+}
