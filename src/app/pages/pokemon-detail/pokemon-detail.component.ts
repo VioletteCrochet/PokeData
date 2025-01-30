@@ -7,10 +7,10 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-pokemon-detail',
   imports: [],
   templateUrl: './pokemon-detail.component.html',
-  styleUrl: './pokemon-detail.component.scss'
+  styleUrl: './pokemon-detail.component.scss',
 })
 export class PokemonDetailComponent {
-  pokemon?: Pokemon
+  pokemon?: Pokemon;
 
   constructor(
     private readonly service: PokemonService,
@@ -30,10 +30,16 @@ export class PokemonDetailComponent {
         },
         error: (err: Error) => {
           console.error(err);
-        }
+        },
       });
     } else {
-      console.error('ID non trouvé dans l\'URL');
+      console.error("ID non trouvé dans l'URL");
     }
+  }
+
+  getStatWidth(statValue: number): string {
+    const maxStat = 200; // Supposons que la valeur max soit 200
+    console.log(`${(statValue / maxStat) * 100}%`);
+    return `${(statValue / maxStat) * 100}%`;
   }
 }
