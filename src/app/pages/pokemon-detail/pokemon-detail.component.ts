@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Pokemon } from '../../types/pokemon';
 import { PokemonService } from '../../services/pokemon.service';
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-pokemon-detail',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './pokemon-detail.component.html',
   styleUrl: './pokemon-detail.component.scss',
 })
