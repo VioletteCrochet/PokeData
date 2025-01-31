@@ -17,6 +17,7 @@ export class PokemonPreviewComponent {
  ngOnInit() {
   this.service.getPokemon().subscribe({
     next: (postResponse: any) => {
+      console.log(postResponse)
       this.pokemons = postResponse
     },
     error: (err: Error) => {

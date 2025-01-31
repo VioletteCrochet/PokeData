@@ -1,4 +1,5 @@
 export interface Pokemon {
+  _id: Object
   id: number
   pokedexId: number
   name: string
